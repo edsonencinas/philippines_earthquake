@@ -1,90 +1,81 @@
-Earthquake Activity Analysis in the Philippines (PHIVOLCS Data)
-Tools Used
-Excel – data cleaning and feature engineering
-Tableau – exploratory analysis and interactive dashboards
+# Earthquake Activity Analysis in the Philippines (PHIVOLCS Data)
+### Tools Used
+- **Excel** – data cleaning and feature engineering
+- **Tableau** – exploratory analysis and interactive dashboards
 
-1. Project Background & Objective
+### 1. Project Background & Objective
 
-The Philippines lies along the Pacific Ring of Fire and experiences frequent seismic activity.
-This project analyzes a PHIVOLCS earthquake catalog containing tens of thousands of recorded seismic events to answer the following questions:
+The Philippines lies along the Pacific Ring of Fire and experiences frequent seismic activity. This project analyzes a PHIVOLCS earthquake catalog containing tens of thousands of recorded seismic events to answer the following questions:
 
-How severe are earthquakes in the Philippines overall?
+- How severe are earthquakes in the Philippines overall?
 
-Which regions experience the most frequent and severe activity?
+- Which regions experience the most frequent and severe activity?
 
-When do earthquake surges occur?
+- When do earthquake surges occur?
 
-What factors best predict whether an earthquake is felt by the population?
+- What factors best predict whether an earthquake is felt by the population?
 
 The goal is to translate raw seismic data into actionable insights that support monitoring, preparedness, and risk awareness.
 
-2. Dataset Overview
+### 2. Dataset Overview
 
 The dataset includes:
 
-Timestamp (DateTimePH)
+- Timestamp (DateTimePH)
 
-Latitude & Longitude
+- Latitude & Longitude
 
-Depth (km)
+- Depth (km)
 
-Magnitude
+- Magnitude
 
-Region / General Location
+- Region / General Location
 
-Felt indicator (Yes / No)
+- Felt indicator (Yes / No)
 
 Each row represents one earthquake event, making the dataset suitable for event-based trend and frequency analysis 
 
-Julius AI_ Chat with Your Data …
+### 3. Data Preparation & Feature Engineering
 
-.
+- To make the data analysis-ready, the following transformations were applied:
 
-3. Data Preparation & Feature Engineering
+- Extracted Date, Month, Week, and Hour from timestamps
 
-To make the data analysis-ready, the following transformations were applied:
+- Created Magnitude Classes (Micro → Major) based on standard seismic definitions
 
-Extracted Date, Month, Week, and Hour from timestamps
+- Categorized Depth into Shallow, Intermediate, and Deep
 
-Created Magnitude Classes (Micro → Major) based on standard seismic definitions
-
-Categorized Depth into Shallow, Intermediate, and Deep
-
-Flagged Felt Earthquakes using the reported indicator
+- Flagged Felt Earthquakes using the reported indicator
 
 These derived fields enabled time-based aggregation, severity analysis, and geographic comparisons.
 
-4. Key Insights & Findings
-4.1 Earthquake Severity Distribution
+### 4. Key Insights & Findings
+## 4.1 Earthquake Severity Distribution
 
-Insight
-The earthquake catalog is overwhelmingly dominated by low-magnitude events.
+**Insight**
+The earthquake catalog is overwhelmingly dominated by **low-magnitude events**.
 
-~78.5% of earthquakes are Micro (<3.0)
+- ~78.5% of earthquakes are Micro (<3.0)
 
-~17.4% are Minor (3.0–3.9)
+- ~17.4% are Minor (3.0–3.9)
 
-Only a very small fraction reach M ≥ 6.0 
+- Only a very small fraction reach M ≥ 6.0 
 
-Julius AI_ Chat with Your Data …
-
-Implication
+**Implication**
 Dashboards and alerts should emphasize frequency and clustering of small events, while treating large earthquakes as high-impact outliers rather than the norm.
 
-4.2 Regional Concentration of Earthquakes
+## 4.2 Regional Concentration of Earthquakes
 
-Insight
+**Insight**
 Seismic activity is not evenly distributed geographically.
 
-Region XIII has the highest number of recorded events
+- Region XIII has the highest number of recorded events
 
-Region XI stands out for having both high event counts and higher magnitudes
+- Region XI stands out for having both high event counts and higher magnitudes
 
-Some regions experience fewer events but higher intensity outliers 
+- Some regions experience fewer events but higher intensity outliers 
 
-Julius AI_ Chat with Your Data …
-
-Implication
+**Implication**
 Risk assessment should distinguish between:
 
 Most frequent regions and
